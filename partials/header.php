@@ -11,8 +11,8 @@
     <header class="site-header">
         <div class="wrap header-inner">
             <a class="brand" href="index.php">
-                <span class="brand-mark" aria-hidden="true">K</span>
-                <span>Kusina ng Barangay</span>
+                <span class="brand-mark" aria-hidden="true">L</span>
+                <span>Kusina ni Lola</span>
             </a>
 
             <nav class="site-nav">
