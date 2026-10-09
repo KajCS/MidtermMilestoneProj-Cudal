@@ -1,0 +1,511 @@
+/* Kusina ng Barangay: warm, home-kitchen theme (adobo brown, banana-leaf green, cream) */
+
+:root {
+    --bg: #faf5ec;
+    --surface: #ffffff;
+    --ink: #2b2118;
+    --muted: #75685b;
+    --line: #e8dcc8;
+    --primary: #9c3b24;
+    --primary-dark: #7a2c19;
+    --leaf: #4c6b35;
+    --leaf-soft: #e7eedd;
+    --gold: #d1901a;
+    --danger: #b3261e;
+    --radius: 12px;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    line-height: 1.55;
+}
+
+h1,
+h2,
+h3 {
+    font-family: Georgia, "Times New Roman", serif;
+    line-height: 1.2;
+    margin: 0 0 .5rem;
+}
+
+h1 {
+    font-size: clamp(1.7rem, 4vw, 2.4rem);
+}
+
+a {
+    color: var(--primary);
+}
+
+.wrap {
+    width: min(1080px, 100% - 2rem);
+    margin-inline: auto;
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+}
+
+.inline {
+    display: inline;
+    margin: 0;
+}
+
+.lead {
+    color: var(--muted);
+    margin: 0 0 1rem;
+}
+
+/* ---------- Header ---------- */
+.site-header {
+    background: var(--primary-dark);
+    color: #fff;
+}
+
+.header-inner {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: .75rem;
+    padding: .9rem 0;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: .6rem;
+    color: #fff;
+    text-decoration: none;
+    font-family: Georgia, serif;
+    font-size: 1.25rem;
+}
+
+.brand-mark {
+    display: grid;
+    place-items: center;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    background: var(--gold);
+    color: var(--primary-dark);
+    font-weight: 700;
+}
+
+.site-nav {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: .35rem 1.1rem;
+}
+
+.site-nav a,
+.site-nav .link-button {
+    color: #f8eadb;
+    text-decoration: none;
+    font-size: .95rem;
+}
+
+.site-nav a:hover,
+.site-nav .link-button:hover {
+    color: #fff;
+    text-decoration: underline;
+}
+
+main.wrap {
+    min-height: 70vh;
+    padding: 2rem 0 3rem;
+}
+
+.site-footer {
+    border-top: 1px solid var(--line);
+    color: var(--muted);
+    font-size: .85rem;
+    padding: 1.2rem 0;
+    text-align: center;
+}
+
+/* ---------- Buttons ---------- */
+.button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: .35rem;
+    padding: .6rem 1.15rem;
+    border: 1px solid var(--primary);
+    border-radius: 999px;
+    background: var(--primary);
+    color: #fff;
+    font: inherit;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background .15s;
+}
+
+.button:hover {
+    background: var(--primary-dark);
+}
+
+.button.outline {
+    background: transparent;
+    color: var(--primary);
+}
+
+.button.outline:hover {
+    background: #f6e7dc;
+}
+
+.button.danger {
+    border-color: var(--danger);
+    background: var(--danger);
+}
+
+.button.small {
+    padding: .35rem .85rem;
+    font-size: .88rem;
+}
+
+.link-button {
+    border: 0;
+    padding: 0;
+    background: none;
+    color: var(--primary);
+    font: inherit;
+    cursor: pointer;
+}
+
+.danger-text {
+    color: var(--danger);
+}
+
+:focus-visible {
+    outline: 3px solid var(--gold);
+    outline-offset: 2px;
+}
+
+/* ---------- Messages ---------- */
+.notice {
+    border-left: 4px solid var(--leaf);
+    border-radius: 6px;
+    padding: .7rem 1rem;
+    background: var(--leaf-soft);
+}
+
+.errors {
+    border-left: 4px solid var(--danger);
+    border-radius: 6px;
+    padding: .7rem 1rem .7rem 2rem;
+    background: #fbe9e7;
+}
+
+.empty {
+    padding: 2rem 1rem;
+    color: var(--muted);
+    text-align: center;
+}
+
+/* ---------- Cards & forms ---------- */
+.card {
+    margin-bottom: 1rem;
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 1.25rem;
+    background: var(--surface);
+}
+
+.card label,
+fieldset {
+    display: block;
+    margin-bottom: 1rem;
+    font-size: .95rem;
+    font-weight: 600;
+}
+
+.card small {
+    display: block;
+    margin-top: .25rem;
+    color: var(--muted);
+    font-weight: 400;
+}
+
+input, select, textarea {
+    display: block;
+    width: 100%;
+    margin-top: .35rem;
+    border: 1px solid #cfc2ad;
+    border-radius: 8px;
+    padding: .6rem .7rem;
+    background: #fff;
+    color: var(--ink);
+    font: inherit;
+    font-weight: 400;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    border-color: var(--primary);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(156, 59, 36, .15);
+}
+
+fieldset {
+    border: 1px dashed var(--line);
+    border-radius: 8px;
+    padding: .8rem 1rem 1rem;
+}
+
+legend {
+    padding: 0 .3rem;
+}
+
+.form-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .6rem;
+}
+
+.hint {
+    margin: 1rem 0 0;
+    color: var(--muted);
+    font-size: .9rem;
+}
+
+.auth-card {
+    max-width: 440px;
+    margin: 1rem auto;
+}
+
+.form-page {
+    max-width: 720px;
+    margin-inline: auto;
+}
+
+.ingredient-row {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    margin-bottom: .5rem;
+}
+
+.ingredient-row input {
+    margin-top: 0;
+}
+
+.remove-ingredient {
+    flex: none;
+    width: 2.4rem;
+    height: 2.4rem;
+    border: 1px solid var(--line);
+    border-radius: 50%;
+    background: #fff;
+    color: var(--muted);
+    cursor: pointer;
+}
+
+.remove-ingredient:hover {
+    border-color: var(--danger);
+    color: var(--danger);
+}
+
+/* ---------- Feed ---------- */
+.page-head {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.filter-bar {
+    display: grid;
+    grid-template-columns: 1fr 220px auto auto;
+    align-items: center;
+    gap: .6rem;
+    margin-bottom: 1rem;
+}
+
+.filter-bar input,
+.filter-bar select {
+    margin-top: 0;
+}
+
+.result-count {
+    color: var(--muted);
+    font-size: .9rem;
+}
+
+.recipe-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+    gap: 1rem;
+}
+
+.recipe-card {
+    display: flex;
+    flex-direction: column;
+    gap: .35rem;
+    border: 1px solid var(--line);
+    border-top: 4px solid var(--leaf);
+    border-radius: var(--radius);
+    padding: 1.1rem;
+    background: var(--surface);
+}
+
+.recipe-card h2 {
+    margin: .2rem 0 0;
+    font-size: 1.25rem;
+}
+
+.recipe-card h2 a {
+    color: var(--ink);
+    text-decoration: none;
+}
+
+.recipe-card h2 a:hover {
+    color: var(--primary);
+}
+
+.recipe-card .description {
+    flex: 1;
+    margin: 0;
+}
+
+.card-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: .5rem;
+}
+
+.tag {
+    display: inline-block;
+    border-radius: 999px;
+    padding: .1rem .65rem;
+    background: var(--leaf-soft);
+    color: var(--leaf);
+    font-size: .78rem;
+    font-weight: 600;
+}
+
+.tag-edited {
+    margin-left: .25rem;
+    background: #f1e6d6;
+    color: var(--muted);
+}
+
+.meta {
+    margin: 0;
+    color: var(--muted);
+    font-size: .85rem;
+}
+
+.rating-line {
+    margin: 0;
+    color: var(--muted);
+    font-size: .88rem;
+}
+
+.stars {
+    color: var(--gold);
+    letter-spacing: 1px;
+}
+
+.fav-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: .3rem;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    padding: .3rem .8rem;
+    background: #fff;
+    color: var(--muted);
+    font: inherit;
+    font-size: .85rem;
+    cursor: pointer;
+}
+
+.fav-btn[aria-pressed="true"] {
+    border-color: var(--primary);
+    background: #fbe4dd;
+    color: var(--primary);
+}
+
+.fav-btn:disabled {
+    opacity: .6;
+    cursor: wait;
+}
+
+/* ---------- Recipe page ---------- */
+.recipe-hero {
+    margin-bottom: 1.5rem;
+}
+
+.actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: .6rem;
+    margin-top: .8rem;
+}
+
+.recipe-body {
+    display: grid;
+    grid-template-columns: 320px 1fr;
+    align-items: start;
+    gap: 1rem;
+}
+
+.ingredients {
+    position: sticky;
+    top: 1rem;
+}
+
+.ingredients ul {
+    margin: 0;
+    padding-left: 1.2rem;
+}
+
+.ingredients li {
+    margin-bottom: .35rem;
+}
+
+.steps ol {
+    margin: 0;
+    padding-left: 1.4rem;
+}
+
+.steps li {
+    margin-bottom: .8rem;
+}
+
+.comments {
+    margin-top: 2rem;
+}
+
+.comment p {
+    margin: .3rem 0;
+}
+
+/* ---------- Phones ---------- */
+@media (max-width: 700px) {
+    .header-inner { flex-direction: column; align-items: flex-start; }
+    .filter-bar { grid-template-columns: 1fr 1fr; }
+    .filter-bar input { grid-column: 1 / -1; }
+    .recipe-body { grid-template-columns: 1fr; }
+    .ingredients { position: static; }
+    .page-head .button { width: 100%; }
+}
